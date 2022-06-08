@@ -1,0 +1,22 @@
+{
+  "name": "backend-anadec",
+  "version": "1.0.0",
+  "description": "Backend do software anadec",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node --experimental-specifier-resolution=node src/index.js",
+    "dev": "nodemon --experimental-specifier-resolution=node src"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "uuid": "^8.3.2"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  }
+}
