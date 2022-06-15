@@ -1,13 +1,24 @@
-import { v4 as uuidv4 } from "uuid";
+import UserService from "../services/userService";
 
 class UserController {
-  index(req, res, next) {
-    return res.json({
-      name: "Erick Willian",
-      id: uuidv4(),
-      email: "willianerick17@gmail.com",
-      password: "1234",
-    });
+  async store(req, res, next) {
+    try {
+      const userService = new UserService();
+      await userService.register(req.body);
+      return res.status(201).json();
+    } catch (err) {
+      return res.status(400).json(err);
+    }
+  }
+  async login(req, res, next) {
+    try {
+      const userService = new UserService();
+      const user = await userService.login(req.body);
+      delete user.password;
+      return res.json(user);
+    } catch (err) {
+      return res.status(400).json({ err });
+    }
   }
 }
 
