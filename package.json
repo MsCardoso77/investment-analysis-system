@@ -9,6 +9,7 @@
     "dev": "nodemon --experimental-specifier-resolution=node src"
   },
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
     "express": "^4.18.1",
     "knex": "^2.1.0",
