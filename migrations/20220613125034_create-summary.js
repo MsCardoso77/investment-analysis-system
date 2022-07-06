@@ -7,6 +7,8 @@ export const up = function (knex) {
     table.increments("id");
     table.integer("id_user").references("user");
     table.string("name", 255);
+    table.json("table_data");
+    table.string("environment", 255);
   });
 };
 

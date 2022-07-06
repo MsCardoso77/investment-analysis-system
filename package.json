@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "start": "node --experimental-specifier-resolution=node src/index.js",
-    "dev": "nodemon --experimental-specifier-resolution=node src"
+    "dev": "nodemon --experimental-specifier-resolution=node src",
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
@@ -17,8 +18,5 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "nodemon": "^2.0.16"
-  }
+  "license": "ISC"
 }
