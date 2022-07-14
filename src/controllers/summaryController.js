@@ -22,7 +22,7 @@ class SummaryController {
   async findByUser(req, res) {
     try {
       const summaryService = new SummaryService();
-      const summaries = await summaryService.findByUser(req.body.id_user);
+      const summaries = await summaryService.findByUser(req.params?.id_user);
       return res.json(summaries);
     } catch (err) {
       return res.status(400).json({ err });
