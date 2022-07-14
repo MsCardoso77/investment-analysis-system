@@ -4,8 +4,8 @@ class UserController {
   async store(req, res, next) {
     try {
       const userService = new UserService();
-      await userService.register(req.body);
-      return res.status(201).json();
+      const data = await userService.register(req.body);
+      return res.status(201).json(data);
     } catch (err) {
       return res.status(400).json(err);
     }

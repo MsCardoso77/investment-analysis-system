@@ -12,8 +12,7 @@ class UserService {
   async register(data) {
     const userRepositories = new UserRepositories();
     const password = await hash(data.password);
-    await userRepositories.createOne({ ...data, password });
-    return;
+    return await userRepositories.createOne({ ...data, password });
   }
 }
 

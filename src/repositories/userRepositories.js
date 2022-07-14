@@ -6,7 +6,8 @@ class UserRepositories {
     return user;
   }
   async createOne(newUser) {
-    await knex.insert(newUser).into("user");
+    const data = await knex.insert(newUser).into("user").returning("id");
+    return data[0];
   }
 }
 
